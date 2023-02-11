@@ -18,8 +18,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    # - uses: hadolint/hadolint-action@v3.1.0
-    #   with:
-    #     dockerfile: Dockerfile
+    - uses: hadolint/hadolint-action@v3.1.0
+      with:
+        dockerfile: ./ho11y/Dockerfile
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
